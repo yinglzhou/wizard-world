@@ -18,13 +18,13 @@ Wizards will be able to:
     - On the left of the timer, there will be little hearts indicating how many lives the player has.
 - Towards the right, there will be a panel for basic instructions for movement and shooting. 
 
-(bonus)
+**(bonus)**
 - There is also a scoreboard that I may use to count the amount of enemies that players have taken down. 
 
 ### Technologies, Libraries, APIs
 The following technologies will be implemented:
-    - `Canvas API` for rendering the map, player, and enemies.
-    - `Webpack` for bundling and transpiling JavaScript Code.
-    - `npm` for managing dependencies
+- `Canvas API` for rendering the map, player, and enemies.
+- `Webpack` for bundling and transpiling JavaScript Code.
+- `npm` for managing dependencies
 
 
