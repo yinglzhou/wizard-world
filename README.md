@@ -33,11 +33,23 @@ The following technologies will be implemented:
     * Get the positioning for canvas right for the game screen.
     * Research a bit more on Canvas API
     * Create `Player` and `Enemy` classes
+        * Maybe a class for `Map`?
     * Be able to get a player to appear in the spawn 
 - **Monday:**
-    * 
+    * Being able to get the player to move when the arrow keys are pressed
+    * Work on getting the shooting to work with the WASD keys
+    * Getting enemies to spawn and follow the player
+    * Maybe start on collisions and getting lives to decrease when the player touches an enemy
 - **Tuesday:**
+    * Finish up collision control and being able to erase enemies when they die
+    * Work on end of the game / (loss/win)
 - **Wednesday:**
+    * Work on styling of everything
+    * Being able to add finishing touches to the game
 - **Thursday Morning:**
 
 
+## Bonus features
+* adding power-ups
+* changing enemies (making more powerful enemies)
+* work on a scoreboard that allows players to keep track of how many enemies they've killed
