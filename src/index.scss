@@ -1,0 +1,7 @@
+//need to include outside scss files in order for this entry fiel to run
+
+@import "./styles/example.scss";
+
+#main {
+    color: $color;
+}
