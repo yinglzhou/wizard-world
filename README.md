@@ -10,7 +10,7 @@ Wizards will be able to:
 - Shoot bullets in different directions with their WASD keys
 
 ## Wireframes:
-![Alt text](wireframe.png)
+![wireframe](wireframe.png)
 - The title/banner will display the name of the game. 
     - To the right of the title, there will be links to Github and LinkedIn.
 - In the game screen, the player's spawn position is represented as the little man in the center. 
