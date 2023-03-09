@@ -8,6 +8,7 @@
 Wizards will be able to:
 - Move around with their arrow keys
 - Shoot bullets in different directions with their WASD keys
+- Defeat enemies that chase them around
 
 ## Wireframes:
 ![wireframe](wireframe.png)
