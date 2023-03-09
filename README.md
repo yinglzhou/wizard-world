@@ -53,5 +53,6 @@ The following technologies will be implemented:
 
 ## Bonus features
 * adding power-ups
-* changing enemies (making more powerful enemies)
 * work on a scoreboard that allows players to keep track of how many enemies they've killed
+* changing enemies (making more powerful enemies)
+    * have enemies drop coins that players can collect to buy powerups
