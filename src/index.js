@@ -36,7 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const a = new Player({name: "me", pos: [375, 250]})
     window.a = a;
 
-    
+
+
+
+
     function gameLoop() {
         a.draw();
         a.move();
