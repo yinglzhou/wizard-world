@@ -25,30 +25,11 @@ class Player {
         ctx.fill()
         ctx.stroke();
     }
-
-    // changeDir (e) {
-    //     if (e.key === "ArrowLeft") {
-    //         this.velX = -1;
-    //     }
-    // }
     
     move(e) {
-        // debugger
-        // let velX = 1;
-        // addEventListener("keydown", (e) => {
-            // if (e.key === "ArrowLeft") {
-                // debugger
-                // this.posX += -velX;
-                // this.draw();
-                // }
-                // })
-
-                this.posX += this.velX;
-                this.posY += this.velY;
-
-                // console.log([this.posX, this.posY])
+        this.posX += this.velX;
+        this.posY += this.velY;
     }
-
 
 }
 

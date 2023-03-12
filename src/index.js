@@ -12,6 +12,21 @@ document.addEventListener("DOMContentLoaded", () => {
     // new Example(main);
     const canvas = document.getElementById("game-screen");
     const ctx = canvas.getContext("2d");
+
+    //background
+    // const img = document.getElementById("cave");
+    // ctx.drawImage(img, 0, 0)
+    // const img = new Image();
+    // img.onload = () => {
+    //     ctx.drawImage(img, 0, 0);
+    // }
+    // img.src = "./assets/cavefloor.png";
+    // img.addEventListener("load", (e) => {
+    //     ctx.drawImage(img, 0, 0);
+    // });
+
+    // window.img = img;
+
     
     
     window.ctx = ctx;

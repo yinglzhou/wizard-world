@@ -1,3 +1,5 @@
+//all my event listeners for key presses (player movement)
+
 export const keyR = document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight") {
         a.velX = 3;

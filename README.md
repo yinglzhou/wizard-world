@@ -11,7 +11,7 @@ Wizards will be able to:
 - Defeat enemies that chase them around
 
 ## Wireframes:
-![wireframe](wireframe.png)
+![wireframe](./assets/wireframe.png)
 - The title/banner will display the name of the game. 
     - To the right of the title, there will be links to Github and LinkedIn.
 - In the game screen, the player's spawn position is represented as the little man in the center. 
