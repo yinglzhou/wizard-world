@@ -1,9 +1,36 @@
 
-#game-screen {
 
+#game-screen {
+    // margin-left: 200px;
+    // margin-top: 100px;
     border-style: groove;
     border-color: rgb(60, 108, 60);
     border-width: 10px;
     background-image: url('../../assets/cavefloor.png');
-    
 }
+
+#scoreboard {
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+}
+
+#instructions {
+    border: 2px solid black;
+    width: 200px;
+    height: 300px;
+}
+.side {
+    border: 2px solid greenyellow;
+    display: flex;
+    margin-left: 50px;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#container {
+    border: 10px solid red;
+    display: flex;
+    justify-content: center;
+}
+

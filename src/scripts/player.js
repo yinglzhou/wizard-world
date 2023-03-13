@@ -76,11 +76,30 @@ class Player {
     move(e) {
         this.posX += this.velX;
         this.posY += this.velY;
+
+        if (this.posX < 0) {
+            this.posX = 0;
+            this.velX = 0;
+        }
+        if (this.posX > 750 - 32) {
+            this.posX = 750 - 32;
+            this.velX = 0;
+        }
+        if (this.posY < 0) {
+            this.posY = 0;
+            this.velY = 0;
+        }
+        if (this.posY > 500 - 48) {
+            this.posY = 500 - 48;
+            this.velY = 0;
+        }
+
     }
 
 }
 
 
+export default Player;
 //my red circle 
     // ctx.beginPath();
     // ctx.arc(this.posX, this.posY, 10, 0, Math.PI * 2, false);
@@ -88,5 +107,3 @@ class Player {
     // ctx.fillStyle = "red"
     // ctx.fill()
     // ctx.stroke();
-
-export default Player;
