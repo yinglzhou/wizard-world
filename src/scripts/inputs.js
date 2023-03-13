@@ -1,27 +1,4 @@
 // //all my event listeners for key presses (player movement)
-// export const right = ctx.drawImage(
-//     this.rightSprite,
-//     this.currentFrame * 32,
-//     0,
-//     32,
-//     48,
-//     this.posX,
-//     this.posY,
-//     32, //half the spritesheet
-//     48
-//   )
-
-// export const left = ctx.drawImage(
-//     this.leftSprite,
-//     this.currentFrame * 32,
-//     0,
-//     32,
-//     48,
-//     this.posX,
-//     this.posY,
-//     32, //half the spritesheet
-//     48
-//   )
 export const keyR = document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight") {
         // debugger
@@ -34,6 +11,7 @@ export const keyR = document.addEventListener("keydown", (e) => {
 
 export const keyL = document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") {
+        // debugger
         a.currentSprite = a.leftSprite;
         a.velX = -3;
         // console.log(e.key)
@@ -83,6 +61,48 @@ export const keyUU = document.addEventListener("keyup", (e) => {
 export const keyDU = document.addEventListener("keyup", (e) => {
     if (e.key === "ArrowDown") {
         a.velY = 0;
+        // console.log(e.key)
+    }
+})
+
+//for alphabet e.key === "d"
+// e.code === "KeyD"
+export const rightShoot = document.addEventListener("keydown", (e) => {
+    if (e.code === "KeyD") {
+        a.keyPressed = true;
+        // debugger 
+        a.shoot();
+        // a.printbullets();
+        console.log(a.keyPressed)
+        console.log(e.key)
+    }
+})
+export const notRightShoot = document.addEventListener("keyup", (e) => {
+    if (e.code === "KeyD") {
+        // debugger
+
+        a.keyPressed = false;
+        // console.log(a.keyPressed)
+        // console.log(e.key)
+    }
+})
+
+export const leftShoot = document.addEventListener("keydown", (e) => {
+    if (e.code === "KeyA") {
+        a.keyPressed = true;
+        // debugger 
+        a.shoot(e.code);
+        // a.printbullets();
+        console.log(a.keyPressed)
+        console.log(e.key)
+    }
+})
+export const notLeftShoot = document.addEventListener("keyup", (e) => {
+    if (e.code === "KeyA") {
+        // debugger
+
+        a.keyPressed = false;
+        // console.log(a.keyPressed)
         // console.log(e.key)
     }
 })

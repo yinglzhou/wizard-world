@@ -1,7 +1,9 @@
 //entry file - what webpack is looking at
+import * as dir from "./scripts/inputs";
 import Example from "./scripts/example";
 import Player from "./scripts/player";
-import * as dir from "./scripts/inputs";
+import Bullet from "./scripts/bullet";
+import BulletController from "./scripts/bulletController";
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log('hello world')
@@ -13,32 +15,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("game-screen");
     const ctx = canvas.getContext("2d");
 
-    //background
-    // const img = document.getElementById("cave");
-    // ctx.drawImage(img, 0, 0)
-    // const img = new Image();
-    // img.onload = () => {
-    //     ctx.drawImage(img, 0, 0);
-    // }
-    // img.src = "./assets/cavefloor.png";
-    // img.addEventListener("load", (e) => {
-    //     ctx.drawImage(img, 0, 0);
-    // });
-
-    // window.img = img;
-
     
     
     window.ctx = ctx;
     window.Player = Player;
 
     //options {name: "me", pos: [375, 250]}
+    // const bull = new BulletController(ctx);
     const a = new Player({name: "me", pos: [375, 250]})
     window.a = a;
+    // window.bull = bull;
 
     function gameLoop() {
+        // debugger
         a.draw();
         a.move();
+        a.update();
+        // debugger
     }
 
     setInterval(gameLoop, 1000/75)
