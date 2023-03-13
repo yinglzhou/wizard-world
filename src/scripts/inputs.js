@@ -65,13 +65,18 @@ export const keyDU = document.addEventListener("keyup", (e) => {
     }
 })
 
+
+
+
+
+
 //for alphabet e.key === "d"
 // e.code === "KeyD"
 export const rightShoot = document.addEventListener("keydown", (e) => {
     if (e.code === "KeyD") {
         a.keyPressed = true;
         // debugger 
-        a.shoot();
+        a.shoot(e.code);
         // a.printbullets();
         console.log(a.keyPressed)
         console.log(e.key)
@@ -82,6 +87,7 @@ export const notRightShoot = document.addEventListener("keyup", (e) => {
         // debugger
 
         a.keyPressed = false;
+        // debugger
         // console.log(a.keyPressed)
         // console.log(e.key)
     }
@@ -99,6 +105,46 @@ export const leftShoot = document.addEventListener("keydown", (e) => {
 })
 export const notLeftShoot = document.addEventListener("keyup", (e) => {
     if (e.code === "KeyA") {
+        // debugger
+
+        a.keyPressed = false;
+        // console.log(a.keyPressed)
+        // console.log(e.key)
+    }
+})
+
+export const upShoot = document.addEventListener("keydown", (e) => {
+    if (e.code === "KeyW") {
+        a.keyPressed = true;
+        // debugger 
+        a.shoot(e.code);
+        // a.printbullets();
+        console.log(a.keyPressed)
+        console.log(e.key)
+    }
+})
+export const notUpShoot = document.addEventListener("keyup", (e) => {
+    if (e.code === "KeyW") {
+        // debugger
+
+        a.keyPressed = false;
+        // console.log(a.keyPressed)
+        // console.log(e.key)
+    }
+})
+
+export const downShoot = document.addEventListener("keydown", (e) => {
+    if (e.code === "KeyS") {
+        a.keyPressed = true;
+        // debugger 
+        a.shoot(e.code);
+        // a.printbullets();
+        console.log(a.keyPressed)
+        console.log(e.key)
+    }
+})
+export const notDownShoot = document.addEventListener("keyup", (e) => {
+    if (e.code === "KeyS") {
         // debugger
 
         a.keyPressed = false;

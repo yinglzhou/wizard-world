@@ -3,7 +3,6 @@ import * as dir from "./scripts/inputs";
 import Example from "./scripts/example";
 import Player from "./scripts/player";
 import Bullet from "./scripts/bullet";
-import BulletController from "./scripts/bulletController";
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log('hello world')
@@ -31,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
         a.draw();
         a.move();
         a.update();
-        // debugger
     }
 
     setInterval(gameLoop, 1000/75)

@@ -1,5 +1,4 @@
 import * as dir from "./inputs"
-// import BulletController from "./bulletController";
 import Bullet from "./bullet"
 //canvas width = 750
 //canvas height = 500
@@ -36,23 +35,37 @@ class Player {
     
     shoot(key) {
         // debugger
+        let dx;
+        let dy;
+        const bullX = this.posX + 16;
+        const bullY = this.posY + 24;
         if (this.keyPressed === true) {
-            console.log("shooting")
-            // const speed = 10;
-            const delay = 5;
-            const bullX = this.posX;
-            const bullY = this.posY;
-            // debugger
-            const bullet = new Bullet(bullX, bullY, delay);
-            // debugger
-            this.bullets.push(bullet)
-
-            // debugger
-            // for (let i = 0; i < this.bullets.length; i++) {
-            //     const bullet = this.bullets[i];
-            //     bullet.draw(ctx);
-            // }
+            if (key === "KeyD") {
+                let dx = 5;
+                let dy = 0;
+                const bullet = new Bullet(bullX, bullY, dx, dy);
+                this.bullets.push(bullet);
+            }
+            if (key === "KeyA") {
+                let dx = -5;
+                let dy = 0;
+                const bullet = new Bullet(bullX, bullY, dx, dy);
+                this.bullets.push(bullet);
+            }
+            if (key === "KeyW") {
+                let dx = 0;
+                let dy = -5;
+                const bullet = new Bullet(bullX, bullY, dx, dy);
+                this.bullets.push(bullet);
+            }
+            if (key === "KeyS") {
+                let dx = 0;
+                let dy = 5;
+                const bullet = new Bullet(bullX, bullY, dx, dy);
+                this.bullets.push(bullet);
+            }
         }
+
     }
 
     update () {
