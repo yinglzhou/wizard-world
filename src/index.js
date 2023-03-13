@@ -3,6 +3,7 @@ import * as dir from "./scripts/inputs";
 import Example from "./scripts/example";
 import Player from "./scripts/player";
 import Bullet from "./scripts/bullet";
+import Enemy from "./scripts/enemy";
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log('hello world')
@@ -25,9 +26,26 @@ document.addEventListener("DOMContentLoaded", () => {
     window.a = a;
     // window.bull = bull;
 
+    const enemies = [];
+
+    function createEnemy() {
+        let randWidth = Math.floor(Math.random() * 751);
+        let randLength = Math.floor(Math.random() * 501);
+
+        const enemy = new Enemy(randWidth, randLength);
+        enemies.push(enemy);
+        console.log("enemy spawned")
+    }
+    setInterval(createEnemy, 10000/2)
+    
+    
     function gameLoop() {
         // debugger
         a.draw();
+        enemies.forEach((enemy) => {
+            //    debugger
+        enemy.draw(ctx);
+        })
         a.move();
         a.update();
     }
