@@ -32,6 +32,10 @@ class Player {
         //bullets
         this.bullets = [];
         this.keyPressed = 0;
+
+
+        //lives
+        this.lives = 3;
     }
     
     shoot(key) {

@@ -19,12 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
     window.ctx = ctx;
     window.Player = Player;
+    // debugger
 
     //options {name: "me", pos: [375, 250]}
-    // const bull = new BulletController(ctx);
     const a = new Player({name: "me", pos: [375, 250]})
     window.a = a;
-    // window.bull = bull;
 
     const enemies = [];
     window.enemies = enemies;
@@ -39,13 +38,26 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(createEnemy, 10000/2)
 
     
-    
+    let timer = 20;
     function gameLoop() {
         // debugger
         a.draw();
         enemies.forEach((enemy) => {enemy.draw(ctx)})
         a.move();
         a.update();
+        timer -= 1/75;
+
+        const min = Math.floor(timer/60);
+        let sec = Math.floor(timer % 60);
+        if (sec < 10) {
+            sec = "0" + sec
+        }
+        if (timer === 0) {
+            clearInterval(timer)
+        } 
+        ctx.font = "bold 30px Courier";
+        ctx.fillStyle = "white"
+        ctx.fillText(`${min}:${sec}`, 30, 30);
     }
     setInterval(gameLoop, 1000/75)
 
@@ -55,5 +67,67 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     setInterval(updateEnemy, 1000/75)
 
-    // function
+
+
+    //bullets and enemies
+    function collisionCheck () {
+        //looping through bullets
+        for (let b = 0; b < a.bullets.length; b++) {
+            let bullet = a.bullets[b];
+            // debugger
+            for (let e = 0; e < enemies.length; e++) {
+                let enemy = enemies[e];
+
+                const dx = bullet.posx - enemy.posx - 16;
+                const dy = bullet.posy - enemy.posy - 24;
+                const distance = Math.sqrt((dx * dx) + (dy * dy));
+
+                
+                //radius + half of enemy width  
+                if (distance < 7 + 30.75/2) {
+
+                    console.log(`bulletx: ${[bullet.posx]}`);
+                    console.log(`enemyx: ${[enemy.posx]}`);
+                    console.log(`bullety: ${[bullet.posy]}`);
+                    console.log(`enemyy: ${[enemy.posy]}`);
+                    
+
+                    a.bullets.splice(b, 1);
+                    enemies.splice(e, 1);
+
+                    break;
+                }
+            }
+        }
+    }
+    setInterval(collisionCheck, 1000/75);
+
+    function touchingEnemy () {
+
+    }
+
+
+
+
+
+
+
+
+
+    
+    
+    
 });
+
+// function collisionVel(bullet, enemy) {
+//     const bulletx = bullet.posx;
+//     const bullety = bullet.posy;
+//     const bulletr = 7;              //bullet radius
+
+//     const enemyx = enemy.posx;
+//     const enemyy = enemy.posy;
+//     const enemyw = 30.75;           //enemy width
+//     const enemyh = 48;              //enemy height
+
+//     if ()
+// }
