@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(createEnemy, 10000/2)
 
     
-    let timer = 20;
+    let timer = 120;
     function gameLoop() {
         // debugger
         a.draw();
@@ -46,19 +46,23 @@ document.addEventListener("DOMContentLoaded", () => {
         a.move();
         a.update();
         timer -= 1/75;
-
+        timerPrint()
+        // gameOver();
+    }
+    function timerPrint() {
         const min = Math.floor(timer/60);
         let sec = Math.floor(timer % 60);
         if (sec < 10) {
             sec = "0" + sec
         }
-        if (timer === 0) {
-            clearInterval(timer)
-        } 
         ctx.font = "bold 30px Courier";
         ctx.fillStyle = "white"
-        ctx.fillText(`${min}:${sec}`, 30, 30);
+
+        if (timer >= 0) {
+            ctx.fillText(`${min}:${sec}`, 30, 30);
+        }
     }
+
     setInterval(gameLoop, 1000/75)
 
     function updateEnemy() {
@@ -67,6 +71,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     setInterval(updateEnemy, 1000/75)
 
+    // function gameOver (){
+    //     if (a.lives === 0 || timer <= 0) {
+    //         clearInterval(gameLoop);
+    //         clearInterval(timer);
+    //     }
+    // }
 
 
     //bullets and enemies
@@ -103,8 +113,26 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(collisionCheck, 1000/75);
 
     function touchingEnemy () {
+        // debugger
+        let player = a;
+        for (let e = 0; e < enemies.length; e++) {
+            let enemy = enemies[e];
 
+            const dx = enemy.posx - player.posX;
+            const dy = enemy.posy - player.posY;
+            const distance = Math.sqrt((dx * dx) + (dy * dy));
+
+
+            if (distance < 32) {
+                player.lives--;
+                enemies.splice(e, 1);
+                console.log("lost a life bud")
+                console.log(player.lives)
+                break;
+            }
+        }
     }
+    setInterval(touchingEnemy, 1000/75);
 
 
 
@@ -114,9 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    
-    
-    
 });
 
 // function collisionVel(bullet, enemy) {
