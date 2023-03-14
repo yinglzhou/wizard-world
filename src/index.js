@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // window.bull = bull;
 
     const enemies = [];
-
+    window.enemies = enemies;
     function createEnemy() {
         let randWidth = Math.floor(Math.random() * 751);
         let randLength = Math.floor(Math.random() * 501);
@@ -36,16 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
         enemies.push(enemy);
         console.log("enemy spawned")
     }
+
     setInterval(createEnemy, 10000/2)
     
     
     function gameLoop() {
         // debugger
         a.draw();
-        enemies.forEach((enemy) => {
-            //    debugger
-        enemy.draw(ctx);
-        })
+        enemies.forEach((enemy) => {enemy.draw(ctx)})
         a.move();
         a.update();
     }
