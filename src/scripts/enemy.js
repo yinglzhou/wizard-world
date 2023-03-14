@@ -3,47 +3,73 @@ class Enemy {
     constructor (posx, posy) {
         this.posx = posx;
         this.posy = posy;
-        let player = a;
+        this.player = a;
         // debugger
-        this.playerposx = a.posx;
-        this.playerposy = a.posy;
+        // this.playerposx = a.posx;
+        // this.playerposy = a.posy;
+        this.rightEnemy = new Image();
+        this.rightEnemy.src = "../assets/scaledrightenemy.png"
 
+        this.leftEnemy = new Image();
+        this.leftEnemy.src = "../assets/scaledleftenemy.png" //width of each frame is 30.75
+        
+
+        this.currentEnemy = this.leftEnemy;
+        //frame things
+        this.currentFrame = 0;
+        this.frameCount = 0;
+        this.delayFrame = 20;
     }
     
     draw(ctx) {
+        // ctx.fillRect(this.posx, this.posy, 32, 48)
+        // ctx.strokeStyle = "black";
+        // ctx.fillStyle = "red"
+
+        ctx.drawImage(
+            this.currentEnemy,
+            this.currentFrame * 30.75,
+            0,
+            30.75,
+            48,
+            this.posx,
+            this.posy,
+            30.75,
+            48
+        )
+
+        this.frameCount++;
+        if (this.frameCount >= this.delayFrame) {
+            this.frameCount = 0;
+            this.currentFrame = (this.currentFrame + 1) % 4;
+        }
+    }
+
+    moveToPlayer () {
         // debugger
-        this.update()
-        ctx.beginPath();
-        ctx.arc(this.posx, this.posy, 10, 0, Math.PI * 2, false);
-        ctx.strokeStyle = "black";
-        ctx.fillStyle = "red"
-        ctx.fill()
-        ctx.stroke();
-    }
-    
-    update() {
-        if (this.playerposx > this.posx) {
-            this.dx = 5;
-        } else {
-            this.dx = -5;
+        const dx = this.player.posX - this.posx; //+16
+        const dy = this.player.posY - this.posy; //+24
+        const distance = Math.sqrt((dx * dx) + (dy * dy))
+        let vx = 0;
+        let vy = 0;
+    // debugger
+        if (distance > 0) {
+            vx = (dx/distance)
+            vy = (dy/distance) //optional multiply by speed
         }
-        this.posx += this.dx;
-        this.posy += 0;
-
-        if (this.posx <= 10) {
-            this.posx = 10;
+        if (vx > 0) {
+            this.currentEnemy = this.rightEnemy;
         }
-        if (this.posy <= 10) {
-            this.posy = 10;
-        }
-        if (this.posx >= 740) {
-            this.posx = 740;
-        }
-        if (this.posy >= 490) {
-            this.posy = 490;
+        if (vx < 0) {
+            this.currentEnemy = this.leftEnemy;
         }
 
+        this.posx += vx;
+        this.posy += vy;
     }
+
+
+
 }
 
 

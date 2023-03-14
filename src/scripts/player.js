@@ -28,7 +28,6 @@ class Player {
         this.delayFrame = 20;
 
         //bullets
-        // this.bulletCon = options["bulletCon"]; //instance of bullet class
         this.bullets = [];
         this.keyPressed = 0;
     }
@@ -95,7 +94,7 @@ class Player {
 
         ctx.drawImage(
             this.currentSprite,
-            this.currentFrame * 32,
+            this.currentFrame * 32, //0
             0,
             32,
             48,
@@ -114,6 +113,9 @@ class Player {
         }
     }
     
+
+
+
 
 
 

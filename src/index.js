@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
         enemies.push(enemy);
         console.log("enemy spawned")
     }
-
     setInterval(createEnemy, 10000/2)
+
     
     
     function gameLoop() {
@@ -47,6 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
         a.move();
         a.update();
     }
-
     setInterval(gameLoop, 1000/75)
+
+    function updateEnemy() {
+        // debugger
+        enemies.forEach((enemy) => {enemy.moveToPlayer()})
+    }
+    setInterval(updateEnemy, 1000/75)
 });

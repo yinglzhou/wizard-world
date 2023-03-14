@@ -8,7 +8,6 @@ class Bullet {
         this.dy = dy;
         this.width = 10;
         this.height = 10;
-
     }
 
 
@@ -24,16 +23,14 @@ class Bullet {
 
 
         ctx.beginPath();
-        ctx.arc(this.posx, this.posy, 5, 0, Math.PI * 2, false);
+        ctx.arc(this.posx, this.posy, 5, 0, Math.PI * 2, false); //radius is 5
         ctx.fillStyle = "orange"
         ctx.fill()
         ctx.strokeStyle = "red"
         ctx.stroke();
-
-        // ctx.fillRect(this.posx, this.posy, this.width, this.height);
     }
 
 }
-
+//if 
 export default Bullet;
 
