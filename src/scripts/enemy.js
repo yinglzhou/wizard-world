@@ -1,5 +1,6 @@
 class Enemy {
-    
+    //width = 30.75
+    //height = 48
     constructor (posx, posy) {
         this.posx = posx;
         this.posy = posy;

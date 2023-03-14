@@ -3,6 +3,8 @@ import Bullet from "./bullet"
 //canvas width = 750
 //canvas height = 500
 class Player {
+    //width = 32
+    //height = 48
     constructor(options) {
         //sprite sheets
         this.rightSprite = new Image();
@@ -70,7 +72,7 @@ class Player {
     update () {
         // debugger
         this.bullets.forEach((el) => {
-            el.update()
+            el.update(this.bullets)
         })
         for (let i = 0; i < this.bullets.length; i++) {
             const bullet = this.bullets[i];

@@ -1,5 +1,6 @@
 
 class Bullet {
+    //radius of bullet is 7
     constructor(posx, posy, dx, dy) {
         this.speed = 0.01;
         this.posx = posx;
@@ -11,9 +12,16 @@ class Bullet {
     }
 
 
-    update () {
+    update (bulletArr) {
         this.posx += this.dx;
         this.posy += this.dy;
+        //if bullet is offscreen then remove it
+        if (this.posx < 0 || this.posy < 0 || this.posx > 750 || this.posy > 500) {
+            let i = bulletArr.indexOf(this)
+            if (i > -1) { //exists
+                bulletArr.splice(i, 1);
+            }
+        }
     }
 
     draw(ctx) {
@@ -23,7 +31,7 @@ class Bullet {
 
 
         ctx.beginPath();
-        ctx.arc(this.posx, this.posy, 5, 0, Math.PI * 2, false); //radius is 5
+        ctx.arc(this.posx, this.posy, 7, 0, Math.PI * 2, false); //radius is 5
         ctx.fillStyle = "orange"
         ctx.fill()
         ctx.strokeStyle = "red"
@@ -31,6 +39,6 @@ class Bullet {
     }
 
 }
-//if 
+
 export default Bullet;
 

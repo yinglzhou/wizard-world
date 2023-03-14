@@ -54,4 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
         enemies.forEach((enemy) => {enemy.moveToPlayer()})
     }
     setInterval(updateEnemy, 1000/75)
+
+    // function
 });
