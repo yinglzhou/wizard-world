@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         enemies.push(enemy);
         console.log("enemy spawned")
     }
-    setInterval(createEnemy, 10000/2)
+    setInterval(createEnemy, 2500)
 
     
     let timer = 120;
@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         timerPrint()
         // gameOver();
     }
+
     function timerPrint() {
         const min = Math.floor(timer/60);
         let sec = Math.floor(timer % 60);
@@ -59,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.fillStyle = "white"
 
         if (timer >= 0) {
-            ctx.fillText(`${min}:${sec}`, 30, 30);
+            ctx.fillText(`${min}:${sec}`, 660, 35);
         }
     }
 
@@ -143,16 +144,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
-
-// function collisionVel(bullet, enemy) {
-//     const bulletx = bullet.posx;
-//     const bullety = bullet.posy;
-//     const bulletr = 7;              //bullet radius
-
-//     const enemyx = enemy.posx;
-//     const enemyy = enemy.posy;
-//     const enemyw = 30.75;           //enemy width
-//     const enemyh = 48;              //enemy height
-
-//     if ()
-// }
