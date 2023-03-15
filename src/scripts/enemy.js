@@ -46,8 +46,9 @@ class Enemy {
         }
     }
 
-    moveToPlayer () {
+    moveToPlayer (speed) {
         // debugger
+        if (!speed) {speed = 1};
         const dx = this.player.posX - this.posx; //+16
         const dy = this.player.posY - this.posy; //+24
         const distance = Math.sqrt((dx * dx) + (dy * dy))
@@ -55,8 +56,8 @@ class Enemy {
         let vy = 0;
     // debugger
         if (distance > 0) {
-            vx = (dx/distance)
-            vy = (dy/distance) //optional multiply by speed
+            vx = (dx/distance) * speed
+            vy = (dy/distance) * speed  //optional multiply by speed
         }
         if (vx > 0) {
             this.currentEnemy = this.rightEnemy;

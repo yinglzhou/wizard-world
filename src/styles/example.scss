@@ -1,8 +1,0 @@
-//scss allows us to create variables and use them in our css code
-//this variable can be used in other files (if they are imported into index.scss)
-$color: pink; // Define a SCSS variable
-
-#main>h1 {
-    border: 4px solid $color; // Use the variable we defined
-    padding: 20px;
-}

@@ -11,10 +11,11 @@ h1 {
 #links {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 
 }
 #links #github {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 #author {
@@ -22,6 +23,7 @@ h1 {
     justify-content: center;
     font-family: wiz;
     font-size: 25px;
-    color: rgb(134, 77, 180);
+    color: rgb(255, 255, 255);
     text-shadow: 1px 1px 4px rgb(238, 142, 236);
+    margin-top: 20px;
 }
