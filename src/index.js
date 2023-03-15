@@ -6,6 +6,8 @@ import Bullet from "./scripts/bullet";
 import Enemy from "./scripts/enemy";
 
 let gameLoopInterval;
+let updateEnemyInterval;
+let createEnemyInterval;
 document.addEventListener("DOMContentLoaded", () => {
     console.log('hello world')
     //grabbing main from our html (index.html)
@@ -36,10 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
         enemies.push(enemy);
         console.log("enemy spawned")
     }
-    setInterval(createEnemy, 2500)
+    createEnemyInterval = setInterval(createEnemy, 2500)
 
     
-    let timer = 20;
+    let timer = 10;
     function gameLoop() {
         // debugger
         a.draw();
@@ -50,7 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
         timerPrint();
         if (a.lives <= 0 || timer <= 0) {
             clearInterval(gameLoopInterval);
-            // clearInterval(timerInterval);
+            clearInterval(updateEnemyInterval);
+            clearInterval(createEnemyInterval)
             gameOver();
         }
         // debugger
@@ -76,18 +79,26 @@ document.addEventListener("DOMContentLoaded", () => {
         // debugger
         enemies.forEach((enemy) => {enemy.moveToPlayer()})
     }
-    setInterval(updateEnemy, 1000/75)
+    updateEnemyInterval =setInterval(updateEnemy, 1000/75)
 
 
     function gameOver (){
-        ctx.font = "bold 75px Arial"
-        ctx.fillStyle = "red"
-        ctx.fillText("GAME OVER", 375, 250)
+        // ctx.font = "bold 75px Arial"
+        // ctx.fillStyle = "red"
+        // ctx.fillText("GAME OVER", 375, 250)
         
         
-        setTimeout(() => {
-            location.reload();
-        }, 3000)
+        // setTimeout(() => {
+        //     location.reload();
+        // }, 3000)
+        const modal = document.createElement("div");
+        modal.id = "game-over-modal";
+
+        modal.innerHTML = `<div class='content'>
+        <h1>Game Over</h1>
+        <button onclick='location.reload()'>Play Again!</button>
+        </div>`;
+        document.body.appendChild(modal);
     }
 
 
