@@ -5,6 +5,7 @@ import Player from "./scripts/player";
 import Bullet from "./scripts/bullet";
 import Enemy from "./scripts/enemy";
 
+let gameLoopInterval;
 document.addEventListener("DOMContentLoaded", () => {
     console.log('hello world')
     //grabbing main from our html (index.html)
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     window.ctx = ctx;
     window.Player = Player;
-    // debugger
+    debugger
 
     //options {name: "me", pos: [375, 250]}
     const a = new Player({name: "me", pos: [375, 250]})
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(createEnemy, 2500)
 
     
-    let timer = 120;
+    let timer = 20;
     function gameLoop() {
         // debugger
         a.draw();
@@ -46,8 +47,13 @@ document.addEventListener("DOMContentLoaded", () => {
         a.move();
         a.update();
         timer -= 1/75;
-        timerPrint()
-        // gameOver();
+        timerPrint();
+        if (a.lives <= 0 || timer <= 0) {
+            clearInterval(gameLoopInterval);
+            // clearInterval(timerInterval);
+            gameOver();
+        }
+        // debugger
     }
 
     function timerPrint() {
@@ -64,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    setInterval(gameLoop, 1000/75)
+    gameLoopInterval = setInterval(gameLoop, 1000/75)
 
     function updateEnemy() {
         // debugger
@@ -72,12 +78,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     setInterval(updateEnemy, 1000/75)
 
-    // function gameOver (){
-    //     if (a.lives === 0 || timer <= 0) {
-    //         clearInterval(gameLoop);
-    //         clearInterval(timer);
-    //     }
-    // }
+
+    function gameOver (){
+        ctx.font = "bold 75px Arial"
+        ctx.fillStyle = "red"
+        ctx.fillText("GAME OVER", 375, 250)
+        
+        
+        setTimeout(() => {
+            location.reload();
+        }, 3000)
+    }
 
 
     //bullets and enemies
@@ -134,13 +145,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     setInterval(touchingEnemy, 1000/75);
-
-
-
-
-
-
-
-
 
 });
