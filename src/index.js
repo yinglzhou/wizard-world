@@ -48,24 +48,24 @@ document.addEventListener("DOMContentLoaded", () => {
     
     function heart() {
         if (a.lives === 3) {
-            ctx.drawImage(redheart, 0, 0, 32, 32, 600, 10, 32, 32)
-            ctx.drawImage(redheart, 0, 0, 32, 32, 565, 10, 32, 32)
-            ctx.drawImage(redheart, 0, 0, 32, 32, 530, 10, 32, 32)
+            ctx.drawImage(redheart, 0, 0, 32, 32, 620, 15, 32, 32)
+            ctx.drawImage(redheart, 0, 0, 32, 32, 585, 15, 32, 32)
+            ctx.drawImage(redheart, 0, 0, 32, 32, 550, 15, 32, 32)
         }
         if (a.lives === 2) {
-            ctx.drawImage(emptyheart, 0, 0, 32, 32, 600, 10, 32, 32)
-            ctx.drawImage(redheart, 0, 0, 32, 32, 565, 10, 32, 32)
-            ctx.drawImage(redheart, 0, 0, 32, 32, 530, 10, 32, 32)
+            ctx.drawImage(emptyheart, 0, 0, 32, 32, 620, 15, 32, 32)
+            ctx.drawImage(redheart, 0, 0, 32, 32, 585, 15, 32, 32)
+            ctx.drawImage(redheart, 0, 0, 32, 32, 550, 15, 32, 32)
         }
         if (a.lives === 1) {
-            ctx.drawImage(emptyheart, 0, 0, 32, 32, 600, 10, 32, 32)
-            ctx.drawImage(emptyheart, 0, 0, 32, 32, 565, 10, 32, 32)
-            ctx.drawImage(redheart, 0, 0, 32, 32, 530, 10, 32, 32)
+            ctx.drawImage(emptyheart, 0, 0, 32, 32, 620, 15, 32, 32)
+            ctx.drawImage(emptyheart, 0, 0, 32, 32, 585, 15, 32, 32)
+            ctx.drawImage(redheart, 0, 0, 32, 32, 550, 15, 32, 32)
         }
         if (a.lives === 0) {
-            ctx.drawImage(emptyheart, 0, 0, 32, 32, 600, 10, 32, 32)
-            ctx.drawImage(emptyheart, 0, 0, 32, 32, 565, 10, 32, 32)
-            ctx.drawImage(emptyheart, 0, 0, 32, 32, 530, 10, 32, 32)
+            ctx.drawImage(emptyheart, 0, 0, 32, 32, 620, 15, 32, 32)
+            ctx.drawImage(emptyheart, 0, 0, 32, 32, 585, 15, 32, 32)
+            ctx.drawImage(emptyheart, 0, 0, 32, 32, 550, 15, 32, 32)
         }
     }
     // debugger
@@ -95,11 +95,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (sec < 10) {
             sec = "0" + sec
         }
-        ctx.font = "bold 30px Courier";
+        ctx.font = "bold 40px rainyheart";
         ctx.fillStyle = "white"
         
         if (timer >= 0) {
-            ctx.fillText(`${min}:${sec}`, 660, 32);
+            ctx.fillText(`${min}:${sec}`, 670, 40);
         }
     }
     
