@@ -5,3 +5,19 @@
 @import "./styles/gameover.scss";
 
 
+@font-face {
+    font-family: wiz;
+    src: url("../assets/04B_30__.woff");
+}
+@font-face {
+    font-family: rainyheart;
+    src: url("../assets/rainyhearts.woff")
+}
+
+body {
+    background-image: url('/assets/spooky-trees.png');
+    background-position: left;
+}
+// canvas {
+//     opacity: 0.5;
+// }

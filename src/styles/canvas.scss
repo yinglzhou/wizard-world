@@ -3,25 +3,59 @@
 #game-screen {
     // margin-left: 200px;
     // margin-top: 100px;
-    border-style: groove;
-    border-color: rgb(60, 108, 60);
-    border-width: 10px;
+    border-style: solid;
+    border-color: rgba(86, 53, 117, 0.953);
+    border-width: 5px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 14px 17px rgb(122, 145, 214);
     background-image: url('../../assets/cavefloor.png');
 }
 
+
+
 #scoreboard {
     border: 2px solid black;
-    width: 200px;
-    height: 200px;
+    width: 230px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: rgba(158, 201, 239, 0.779);
+    border-radius: 10px;
+    border-width: 5px;
+    box-shadow: 0px 0px 14px 17px rgb(122, 145, 214);
+
+    font-family: rainyheart;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    border-color: rgba(86, 53, 117, 0.953);
 }
 
 #instructions {
     border: 2px solid black;
-    width: 200px;
-    height: 300px;
+    width: 230px;
+    height: 350px;
+    background-color: rgba(158, 201, 239, 0.779);
+    border-color: rgba(86, 53, 117, 0.953);
+    border-width: 5px;
+    box-shadow: 0px 0px 14px 17px rgb(122, 145, 214);
+
+    border-radius: 10px;
+    font-family: rainyheart;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+}
+#instructions p {
+    text-decoration: underline;
+    margin-top: 10px;
+    vertical-align: center;
+}
+#instructions h5 {
+    text-decoration: underline;
+    margin-bottom: 5px;
 }
 .side {
-    border: 2px solid greenyellow;
+    // border: 2px solid greenyellow;
     display: flex;
     margin-left: 50px;
     flex-direction: column;
@@ -29,8 +63,9 @@
 }
 
 #container {
-    border: 10px solid red;
+    // border: 10px solid red;
     display: flex;
     justify-content: center;
+    margin-top: 45px;
 }
 

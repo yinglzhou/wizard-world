@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     window.ctx = ctx;
     window.Player = Player;
-    debugger
+    // debugger
 
     //options {name: "me", pos: [375, 250]}
     const a = new Player({name: "me", pos: [375, 250]})
@@ -40,22 +40,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     createEnemyInterval = setInterval(createEnemy, 2500)
 
-    
-    let timer = 10;
+    let redheart = new Image();
+    redheart.src = "./assets/1redheart.png"
+
+    let emptyheart = new Image ();
+    emptyheart.src = "./assets/1emptyheart.png"
+
+    function heart() {
+        if (a.lives === 3) {
+            ctx.drawImage(redheart, 0, 0, 32, 32, 600, 10, 32, 32)
+            ctx.drawImage(redheart, 0, 0, 32, 32, 565, 10, 32, 32)
+            ctx.drawImage(redheart, 0, 0, 32, 32, 530, 10, 32, 32)
+        }
+        if (a.lives === 2) {
+            ctx.drawImage(emptyheart, 0, 0, 32, 32, 600, 10, 32, 32)
+            ctx.drawImage(redheart, 0, 0, 32, 32, 565, 10, 32, 32)
+            ctx.drawImage(redheart, 0, 0, 32, 32, 530, 10, 32, 32)
+        }
+        if (a.lives === 1) {
+            ctx.drawImage(emptyheart, 0, 0, 32, 32, 600, 10, 32, 32)
+            ctx.drawImage(emptyheart, 0, 0, 32, 32, 565, 10, 32, 32)
+            ctx.drawImage(redheart, 0, 0, 32, 32, 530, 10, 32, 32)
+        }
+        if (a.lives === 0) {
+            ctx.drawImage(emptyheart, 0, 0, 32, 32, 600, 10, 32, 32)
+            ctx.drawImage(emptyheart, 0, 0, 32, 32, 565, 10, 32, 32)
+            ctx.drawImage(emptyheart, 0, 0, 32, 32, 530, 10, 32, 32)
+        }
+    }
+// debugger
+    let timer = 100;
     function gameLoop() {
         // debugger
         a.draw();
+        heart();
         enemies.forEach((enemy) => {enemy.draw(ctx)})
         a.move();
         a.update();
         timer -= 1/75;
         timerPrint();
-        if (a.lives <= 0 || timer <= 0) {
-            clearInterval(gameLoopInterval);
-            clearInterval(updateEnemyInterval);
-            clearInterval(createEnemyInterval)
-            gameOver();
-        }
+        // if (a.lives <= 0 || timer <= 0) {
+        //     clearInterval(gameLoopInterval);
+        //     clearInterval(updateEnemyInterval);
+        //     clearInterval(createEnemyInterval)
+        //     gameOver();
+        // }
         // debugger
     }
 
@@ -69,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ctx.fillStyle = "white"
 
         if (timer >= 0) {
-            ctx.fillText(`${min}:${sec}`, 660, 35);
+            ctx.fillText(`${min}:${sec}`, 660, 32);
         }
     }
 
@@ -95,8 +124,8 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.id = "game-over-modal";
 
         modal.innerHTML = `<div class='content'>
-        <h1>Game Over</h1>
-        <button onclick='location.reload()'>Play Again!</button>
+        <h2>Game Over</h2>
+        <h4 onclick='location.reload()'>Play Again!</div>
         </div>`;
         document.body.appendChild(modal);
     }

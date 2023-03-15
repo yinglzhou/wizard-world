@@ -8,13 +8,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: gray;
-    opacity: 0.5;
+    background-color: rgba(30, 26, 26, 0.8);
+    // opacity: 0.5;
 }
 
 #game-over-modal.content {
     border: solid 5px red;
-
+    display: flex;
 }
 
 #game-over-modal h1 {
@@ -24,6 +24,28 @@
 
 
 #game-over-modal button {
+    width: 50%;
     border: solid 5px greenyellow;
+    
+}
 
+h2 {
+    margin-top: 25px;
+    font-family: wiz;
+    font-size: 50px;
+    color: rgb(211, 36, 9);
+    text-align: center;
+    // z-index: 1;
+}
+
+h4 {
+    margin-top: 50px;
+    text-align: center;
+    font-family: wiz;
+    font-size: 35px;
+    color: rgb(103, 178, 103);
+    cursor: pointer;
+}
+h4:hover {
+    color: rgb(224, 234, 243);
 }

@@ -56,7 +56,13 @@ table {
 }
 
 h1 {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-family: wiz;
+  font-size: 75px;
+  color: rgb(111, 42, 167);
   text-align: center;
+  text-shadow: 4px 4px 3px rgb(238, 142, 236);
 }
 
 #links {
@@ -64,27 +70,71 @@ h1 {
   justify-content: center;
 }
 
+#links #github {
+  margin-right: 10px;
+}
+
+#author {
+  display: flex;
+  justify-content: center;
+  font-family: wiz;
+  font-size: 25px;
+  color: rgb(134, 77, 180);
+  text-shadow: 1px 1px 4px rgb(238, 142, 236);
+}
+
 #game-screen {
-  border-style: groove;
-  border-color: rgb(60, 108, 60);
-  border-width: 10px;
+  border-style: solid;
+  border-color: rgba(86, 53, 117, 0.953);
+  border-width: 5px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 14px 17px rgb(122, 145, 214);
   background-image: url("../../assets/cavefloor.png");
 }
 
 #scoreboard {
   border: 2px solid black;
-  width: 200px;
-  height: 200px;
+  width: 230px;
+  height: 100px;
+  border-radius: 10px;
+  background-color: rgba(158, 201, 239, 0.779);
+  border-radius: 10px;
+  border-width: 5px;
+  box-shadow: 0px 0px 14px 17px rgb(122, 145, 214);
+  font-family: rainyheart;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 700;
+  border-color: rgba(86, 53, 117, 0.953);
 }
 
 #instructions {
   border: 2px solid black;
-  width: 200px;
-  height: 300px;
+  width: 230px;
+  height: 350px;
+  background-color: rgba(158, 201, 239, 0.779);
+  border-color: rgba(86, 53, 117, 0.953);
+  border-width: 5px;
+  box-shadow: 0px 0px 14px 17px rgb(122, 145, 214);
+  border-radius: 10px;
+  font-family: rainyheart;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+#instructions p {
+  text-decoration: underline;
+  margin-top: 10px;
+  vertical-align: center;
+}
+
+#instructions h5 {
+  text-decoration: underline;
+  margin-bottom: 5px;
 }
 
 .side {
-  border: 2px solid greenyellow;
   display: flex;
   margin-left: 50px;
   flex-direction: column;
@@ -92,9 +142,9 @@ h1 {
 }
 
 #container {
-  border: 10px solid red;
   display: flex;
   justify-content: center;
+  margin-top: 45px;
 }
 
 #game-over-modal {
@@ -107,12 +157,12 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: gray;
-  opacity: 0.5;
+  background-color: rgba(30, 26, 26, 0.8);
 }
 
 #game-over-modal.content {
   border: solid 5px red;
+  display: flex;
 }
 
 #game-over-modal h1 {
@@ -120,5 +170,40 @@ h1 {
 }
 
 #game-over-modal button {
+  width: 50%;
   border: solid 5px greenyellow;
+}
+
+h2 {
+  margin-top: 25px;
+  font-family: wiz;
+  font-size: 50px;
+  color: rgb(211, 36, 9);
+  text-align: center;
+}
+
+h4 {
+  margin-top: 50px;
+  text-align: center;
+  font-family: wiz;
+  font-size: 35px;
+  color: rgb(103, 178, 103);
+  cursor: pointer;
+}
+
+h4:hover {
+  color: rgb(224, 234, 243);
+}
+
+@font-face {
+  font-family: wiz;
+  src: url("../assets/04B_30__.woff");
+}
+@font-face {
+  font-family: rainyheart;
+  src: url("../assets/rainyhearts.woff");
+}
+body {
+  background-image: url("/assets/spooky-trees.png");
+  background-position: left;
 }
