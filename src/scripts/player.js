@@ -36,6 +36,7 @@ class Player {
 
         //lives
         this.lives = 3;
+        this.score = 0;
     }
     
     shoot(key) {

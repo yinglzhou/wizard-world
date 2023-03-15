@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         a.update();
         timer -= 1/75;
         timerPrint();
+        printScore();
         // if (a.lives <= 0 || timer <= 0) {
         //     clearInterval(gameLoopInterval);
         //     clearInterval(updateEnemyInterval);
@@ -86,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //     gameOver();
         // }
         // debugger
+
     }
 
     function timerPrint() {
@@ -103,6 +105,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     gameLoopInterval = setInterval(gameLoop, 1000/75)
+
+    function printScore() {
+        const score = document.getElementById("scoreboard");
+        score.innerHTML = `
+        <p>
+            Score: <br>
+            <div>
+            ${a.score}
+            </div>
+        </p>
+        `
+    }
 
     function updateEnemy() {
         // debugger
@@ -156,7 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     a.bullets.splice(b, 1);
                     enemies.splice(e, 1);
-
+                    a.score++;
+                    console.log(a.score);
                     break;
                 }
             }
@@ -186,4 +201,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     setInterval(touchingEnemy, 1000/75);
 
+
+    
 });
