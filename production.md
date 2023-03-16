@@ -1,6 +1,6 @@
 # wizard world
 
-[Link to Game]: https://yinglzhou.github.io/wizard-world/
+[Link to Game]: (https://yinglzhou.github.io/wizard-world/)
 
 ## Description:
 
