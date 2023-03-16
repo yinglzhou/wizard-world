@@ -14,6 +14,7 @@ wizard world is coded entirely in vanilla Javascript. The game is updated using 
 
 ## Feature Implementation:
 The score panel on the right side updates as a bullet collides with an enemy. 
+``` javascript
     function printScore() {
         const score = document.getElementById("scoreboard");
         score.innerHTML = `
@@ -43,4 +44,5 @@ The score panel on the right side updates as a bullet collides with an enemy.
             }
         }
     }
+```
 
