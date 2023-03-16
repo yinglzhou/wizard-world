@@ -256,6 +256,12 @@ h1 {
   border: solid 5px greenyellow;
 }
 
+#game-over-modal h3 {
+  text-decoration: none;
+  margin-top: 28px;
+  margin-bottom: 88px;
+}
+
 h2 {
   margin-top: 25px;
   font-family: wiz;

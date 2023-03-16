@@ -135,6 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         modal.innerHTML = `<div class='content'>
         <h2>Game Over</h2>
+        <h3>Final Score: ${a.score}</h3>
         <h4 onclick='location.reload()'>Play Again!</div>
         </div>`;
         document.body.appendChild(modal);
