@@ -9,7 +9,7 @@ wizard world is a top-down shooter game that where the player's goal is to stay 
 ## Controls:
 Player movement is controlled via the arrow keys.  
 The direction that the fireballs are shot in are controlled with the WASD keys.  
-<img src="./assets/instructions.png" width="120" height="80">
+<img src="./assets/instructions.png" width="300" height="200">
 <!-- ![instructions](./assets/instructions.png | width=150) -->
 
 ## Technical:
