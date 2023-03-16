@@ -1,6 +1,5 @@
 //entry file - what webpack is looking at
 import * as dir from "./scripts/inputs";
-import Example from "./scripts/example";
 import Player from "./scripts/player";
 import Bullet from "./scripts/bullet";
 import Enemy from "./scripts/enemy";
