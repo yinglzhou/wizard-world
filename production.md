@@ -4,11 +4,12 @@
 
 ## Description:
 wizard world is a top-down shooter game that where the player's goal is to stay alive until the timer runs out. Players must defeat all the reapers that spawn with their fireballs in order to survive! 
-![gamescreen]("./assets/gamescreen.png")
+![gamescreen](./assets/gamescreen.png)
 
 ## Controls:
 Player movement is controlled via the arrow keys.
 The direction that the fireballs are shot in are controlled with the WASD keys.
+![instructions](./assets/instructions.png)
 
 ## Technical:
 wizard world is coded entirely in vanilla Javascript. The game is updated using the setInterval function and is rendered on a canvas element.
