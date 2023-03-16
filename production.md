@@ -1,6 +1,6 @@
 # wizard world
 
-[URL](https://yinglzhou.github.io/wizard-world/): https://yinglzhou.github.io/wizard-world/
+[Link to game](https://yinglzhou.github.io/wizard-world/)
 
 ## Description:
 
