@@ -9,10 +9,10 @@ class Enemy {
         // this.playerposx = a.posx;
         // this.playerposy = a.posy;
         this.rightEnemy = new Image();
-        this.rightEnemy.src = "/src/assets/scaledrightenemy.png"
+        this.rightEnemy.src = "./src/assets/scaledrightenemy.png"
 
         this.leftEnemy = new Image();
-        this.leftEnemy.src = "/src/assets/scaledleftenemy.png" //width of each frame is 30.75
+        this.leftEnemy.src = "./src/assets/scaledleftenemy.png" //width of each frame is 30.75
         
 
         this.currentEnemy = this.leftEnemy;
