@@ -12,17 +12,33 @@ h1 {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-
+    // box-shadow: 10px 10px 20px 0px rgba(255,194,255,1);;
 }
-#links #github {
+
+#about:hover{
+    color:rgb(111, 42, 167)
+}
+
+#about {
+    text-decoration: none;
+    font-family: wiz;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 4px rgb(250, 204, 249);
+    margin-top: 6px;
+}
+
+#github {
+    margin-left: 20px;
     margin-right: 20px;
+    // box-shadow: 10px 10px 20px 0px rgba(255,194,255,1);
 }
 
 #author {
     display: flex;
     justify-content: center;
     font-family: wiz;
-    font-size: 25px;
+    font-size: 30px;
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px 4px rgb(238, 142, 236);
     margin-top: 20px;
