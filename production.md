@@ -13,3 +13,4 @@ The direction that the fireballs are shot in are controlled with the WASD keys.
 wizard world is coded entirely in vanilla Javascript. The game is updated using the setInterval function and is rendered on a canvas element.
 
 ## Feature Implementation:
+The score 
