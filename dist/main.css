@@ -84,7 +84,7 @@ table {
 }
 
 #box {
-  background-image: url("./src/assets/final-popup.png");
+  background-image: url("/src/assets/final-popup.png");
   background-size: 600px 400px;
   width: 600px;
   height: 400px;
@@ -161,7 +161,7 @@ h1 {
   border-width: 5px;
   border-radius: 25px;
   box-shadow: 0px 0px 14px 17px rgb(122, 145, 214);
-  background-image: url("./src/assets/tiles.png");
+  background-image: url("/src/assets/tiles.png");
 }
 
 #scoreboard {
@@ -278,13 +278,13 @@ h4:hover {
 
 @font-face {
   font-family: wiz;
-  src: url("./src/assets/04B_30__.woff");
+  src: url("/src/assets/04B_30__.woff");
 }
 @font-face {
   font-family: rainyheart;
-  src: url("./src/assets/rainyhearts.woff");
+  src: url("/src/assets/rainyhearts.woff");
 }
 body {
-  background-image: url("./src/assets/spooky-trees.png");
+  background-image: url("/src/assets/spooky-trees.png");
   background-position: left;
 }
