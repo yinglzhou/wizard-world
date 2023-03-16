@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     // debugger
-    let timer = 90;
+    let timer = 61;
     function gameLoop() {
         a.draw();
         heart();
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     startbutton.addEventListener("click", () => {
         modal.style.display = "none";
-        createEnemyInterval = setInterval(createEnemy, 2000)
+        createEnemyInterval = setInterval(createEnemy, 1000)
         gameLoopInterval = setInterval(gameLoop, 1000/75)
         updateEnemyInterval = setInterval(updateEnemy, 1000/75)
         setInterval(collisionCheck, 1000/75);

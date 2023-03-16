@@ -40,7 +40,6 @@ class Player {
     }
     
     shoot(key) {
-        // debugger
         let dx;
         let dy;
         const bullX = this.posX + 16;
@@ -121,13 +120,6 @@ class Player {
     }
     
 
-
-
-
-
-
-
-
     move(e) {
         this.posX += this.velX;
         this.posY += this.velY;
@@ -155,21 +147,3 @@ class Player {
 
 
 export default Player;
-
-
-
-
-
-
-
-
-
-
-
-//my red circle 
-    // ctx.beginPath();
-    // ctx.arc(this.posX, this.posY, 10, 0, Math.PI * 2, false);
-    // ctx.strokeStyle = "black";
-    // ctx.fillStyle = "red"
-    // ctx.fill()
-    // ctx.stroke();

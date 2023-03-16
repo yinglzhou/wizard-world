@@ -4,6 +4,7 @@
 
 ## Description:
 wizard world is a top-down shooter game that where the player's goal is to stay alive until the timer runs out. Players must defeat all the reapers that spawn with their fireballs in order to survive! 
+![gamescreen]("./assets/gamescreen.png")
 
 ## Controls:
 Player movement is controlled via the arrow keys.
@@ -45,4 +46,51 @@ The score panel on the right side updates as a bullet collides with an enemy.
         }
     }
 ```
+When the player shoots a bullet with the WASD keys, the bullets move in the corresponding directions.
+``` javascript
+    shoot(key) {
+        let dx;
+        let dy;
+        const bullX = this.posX + 16;
+        const bullY = this.posY + 24;
+        if (this.keyPressed === true) {
+            if (key === "KeyD") {
+                let dx = 5;
+                let dy = 0;
+                const bullet = new Bullet(bullX, bullY, dx, dy);
+                this.bullets.push(bullet);
+            }
+            if (key === "KeyA") {
+                let dx = -5;
+                let dy = 0;
+                const bullet = new Bullet(bullX, bullY, dx, dy);
+                this.bullets.push(bullet);
+            }
+            if (key === "KeyW") {
+                let dx = 0;
+                let dy = -5;
+                const bullet = new Bullet(bullX, bullY, dx, dy);
+                this.bullets.push(bullet);
+            }
+            if (key === "KeyS") {
+                let dx = 0;
+                let dy = 5;
+                const bullet = new Bullet(bullX, bullY, dx, dy);
+                this.bullets.push(bullet);
+            }
+        }
 
+    }
+```
+The enemies speed will inscrease when the player's score obtains 5 points and once again when they obtain 15 points.
+``` javascript
+    function updateEnemy() {
+        if (a.score >= 5) {
+            enemies.forEach((enemy) => {enemy.moveToPlayer(1.1)})
+        }
+        if (a.score >= 15) {
+            enemies.forEach((enemy) => {enemy.moveToPlayer(1.15)})
+        }
+        enemies.forEach((enemy) => {enemy.moveToPlayer()})
+    }
+```
