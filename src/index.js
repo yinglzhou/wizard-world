@@ -40,10 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     let redheart = new Image();
-    redheart.src = "./src/assets/1redheart.png"
+    redheart.src = "./assets/1redheart.png"
     
     let emptyheart = new Image ();
-    emptyheart.src = "./src/assets/1emptyheart.png"
+    emptyheart.src = "./assets/1emptyheart.png"
     
     function heart() {
         if (a.lives === 3) {

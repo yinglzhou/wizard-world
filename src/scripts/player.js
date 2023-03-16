@@ -8,10 +8,10 @@ class Player {
     constructor(options) {
         //sprite sheets
         this.rightSprite = new Image();
-        this.rightSprite.src = "./src/assets/scaledright.png";
+        this.rightSprite.src = "./assets/scaledright.png";
 
         this.leftSprite = new Image();
-        this.leftSprite.src = "./src/assets/scaledleft.png";
+        this.leftSprite.src = "./assets/scaledleft.png";
 
         this.currentSprite = this.rightSprite;
 
