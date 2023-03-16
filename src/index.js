@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // console.log(randWidth, randLength)
         const enemy = new Enemy(randWidth, randLength);
         enemies.push(enemy);
-        console.log("enemy spawned")
+        // console.log("enemy spawned")
     }
     
     let redheart = new Image();
@@ -158,16 +158,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 //radius + half of enemy width  
                 if (distance < 7 + 30.75/2) {
                     
-                    console.log(`bulletx: ${[bullet.posx]}`);
-                    console.log(`enemyx: ${[enemy.posx]}`);
-                    console.log(`bullety: ${[bullet.posy]}`);
-                    console.log(`enemyy: ${[enemy.posy]}`);
+                    // console.log(`bulletx: ${[bullet.posx]}`);
+                    // console.log(`enemyx: ${[enemy.posx]}`);
+                    // console.log(`bullety: ${[bullet.posy]}`);
+                    // console.log(`enemyy: ${[enemy.posy]}`);
                     
                     
                     a.bullets.splice(b, 1);
                     enemies.splice(e, 1);
                     a.score++;
-                    console.log(a.score);
+                    // console.log(a.score);
                     break;
                 }
             }
@@ -188,8 +188,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (distance < 32) {
                 player.lives--;
                 enemies.splice(e, 1);
-                console.log("lost a life bud")
-                console.log(player.lives)
+                // console.log("lost a life bud")
+                // console.log(player.lives)
                 break;
             }
         }

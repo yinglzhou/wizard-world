@@ -78,8 +78,8 @@ export const rightShoot = document.addEventListener("keydown", (e) => {
         // debugger 
         a.shoot(e.code);
         // a.printbullets();
-        console.log(a.keyPressed)
-        console.log(e.key)
+        // console.log(a.keyPressed)
+        // console.log(e.key)
     }
 })
 export const notRightShoot = document.addEventListener("keyup", (e) => {
@@ -99,8 +99,8 @@ export const leftShoot = document.addEventListener("keydown", (e) => {
         // debugger 
         a.shoot(e.code);
         // a.printbullets();
-        console.log(a.keyPressed)
-        console.log(e.key)
+        // console.log(a.keyPressed)
+        // console.log(e.key)
     }
 })
 export const notLeftShoot = document.addEventListener("keyup", (e) => {
@@ -119,8 +119,8 @@ export const upShoot = document.addEventListener("keydown", (e) => {
         // debugger 
         a.shoot(e.code);
         // a.printbullets();
-        console.log(a.keyPressed)
-        console.log(e.key)
+        // console.log(a.keyPressed)
+        // console.log(e.key)
     }
 })
 export const notUpShoot = document.addEventListener("keyup", (e) => {
@@ -139,8 +139,8 @@ export const downShoot = document.addEventListener("keydown", (e) => {
         // debugger 
         a.shoot(e.code);
         // a.printbullets();
-        console.log(a.keyPressed)
-        console.log(e.key)
+        // console.log(a.keyPressed)
+        // console.log(e.key)
     }
 })
 export const notDownShoot = document.addEventListener("keyup", (e) => {
