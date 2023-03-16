@@ -7,9 +7,9 @@ wizard world is a top-down shooter game that where the player's goal is to stay 
 ![gamescreen](./assets/gamescreen.png)
 
 ## Controls:
-Player movement is controlled via the arrow keys.
+Player movement is controlled via the arrow keys.  
 The direction that the fireballs are shot in are controlled with the WASD keys.
-![instructions](./assets/instructions.png)
+![instructions](./assets/instructions.png) | width=150
 
 ## Technical:
 wizard world is coded entirely in vanilla Javascript. The game is updated using the setInterval function and is rendered on a canvas element.
