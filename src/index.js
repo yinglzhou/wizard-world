@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let randWidth = Math.floor(Math.random() * 751);
         let randLength = Math.floor(Math.random() * 501);
         // debugger
-        if (randWidth > 180 && randWidth < 570 || randLength > 125 && randLength < 375) {
+        while (randWidth > 170 && randWidth < 580 || randLength > 115 && randLength < 385) {
             randWidth = Math.floor(Math.random() * 751);
             randLength = Math.floor(Math.random() * 501);
         }
@@ -116,7 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     function updateEnemy() {
-        // debugger
         if (a.score >= 5) {
             enemies.forEach((enemy) => {enemy.moveToPlayer(1.1)})
         }
