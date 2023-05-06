@@ -67,8 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
             ctx.drawImage(emptyheart, 0, 0, 32, 32, 550, 15, 32, 32)
         }
     }
-    // debugger
-    let timer = 61;
+    // debugger 61
+    let timer = 5;
     function gameLoop() {
         a.draw();
         heart();
@@ -78,11 +78,17 @@ document.addEventListener("DOMContentLoaded", () => {
         timer -= 1/75;
         timerPrint();
         printScore();
-        if (a.lives <= 0 || timer <= 0) {
+        if (a.lives <= 0) {
             clearInterval(gameLoopInterval);
             clearInterval(updateEnemyInterval);
             clearInterval(createEnemyInterval);
             gameOver();
+        }
+        if (timer <= 0) {
+            clearInterval(gameLoopInterval);
+            clearInterval(updateEnemyInterval);
+            clearInterval(createEnemyInterval);
+            gameWin();
         }
         // debugger
         
@@ -117,11 +123,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
     function updateEnemy() {
         if (a.score >= 5) {
-            enemies.forEach((enemy) => {enemy.moveToPlayer(1.1)})
+            enemies.forEach((enemy) => {enemy.moveToPlayer(0.5)})
         }
         
         if (a.score >= 15) {
-            enemies.forEach((enemy) => {enemy.moveToPlayer(1.15)})
+            enemies.forEach((enemy) => {enemy.moveToPlayer(0.75)})
         }
         
         enemies.forEach((enemy) => {enemy.moveToPlayer()})
@@ -134,6 +140,18 @@ document.addEventListener("DOMContentLoaded", () => {
         
         modal.innerHTML = `<div class='content'>
         <h2>Game Over</h2>
+        <h3>Final Score: ${a.score}</h3>
+        <h4 onclick='location.reload()'>Play Again!</div>
+        </div>`;
+        document.body.appendChild(modal);
+    }
+
+    function gameWin() {
+        const modal = document.createElement("div");
+        modal.id = "game-over-modal";
+        
+        modal.innerHTML = `<div class='content'>
+        <h2>You Win!</h2>
         <h3>Final Score: ${a.score}</h3>
         <h4 onclick='location.reload()'>Play Again!</div>
         </div>`;
