@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.Player = Player;
     // debugger
 
-    //options {name: "me", pos: [375, 250]}
+    //options {name: "me", pos: [375, 250]} midpoint
     const a = new Player({name: "me", pos: [375, 250]})
     window.a = a;
 
@@ -168,13 +168,13 @@ document.addEventListener("DOMContentLoaded", () => {
             for (let e = 0; e < enemies.length; e++) {
                 let enemy = enemies[e];
                 
-                const dx = bullet.posx - enemy.posx - 16;
+                const dx = bullet.posx - enemy.posx - 15.375;
                 const dy = bullet.posy - enemy.posy - 24;
                 const distance = Math.sqrt((dx * dx) + (dy * dy));
                 
                 
                 //radius + half of enemy width  
-                if (distance < 7 + 30.75/2) {
+                if (distance < 7 + 15.375) {
                     
                     // console.log(`bulletx: ${[bullet.posx]}`);
                     // console.log(`enemyx: ${[enemy.posx]}`);
