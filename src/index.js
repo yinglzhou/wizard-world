@@ -4,6 +4,7 @@ import Player from "./scripts/player";
 import Bullet from "./scripts/bullet";
 import Enemy from "./scripts/enemy";
 import { createEnemy, enemies, updateEnemy } from "./scripts/enemy";
+import { collisionCheck, touchingEnemy } from "./scripts/collision";
 import { heart } from "./scripts/lives";
 
 let gameLoopInterval;
@@ -44,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
             clearInterval(createEnemyInterval);
             gameWin();
         }
-        // debugger
         
     }
     
@@ -100,53 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     
-    //bullets and enemies
-    function collisionCheck () {
-        //looping through bullets
-        for (let b = 0; b < a.bullets.length; b++) {
-            let bullet = a.bullets[b];
-            // debugger
-            for (let e = 0; e < enemies.length; e++) {
-                let enemy = enemies[e];
-                
-                const dx = bullet.posx - enemy.posx - 15.375;
-                const dy = bullet.posy - enemy.posy - 24;
-                const distance = Math.sqrt((dx * dx) + (dy * dy));
-                
-                //radius + half of enemy width  
-                if (distance < 7 + 15.375) {
-                    
-                    a.bullets.splice(b, 1);
-                    enemies.splice(e, 1);
-                    a.score++;
-                    // console.log(a.score);
-                    break;
-                }
-            }
-        }
-    }
-    
-    function touchingEnemy () {
-        // debugger
-        let player = a;
-        for (let e = 0; e < enemies.length; e++) {
-            let enemy = enemies[e];
-            
-            const dx = enemy.posx - player.posX;
-            const dy = enemy.posy - player.posY;
-            const distance = Math.sqrt((dx * dx) + (dy * dy));
-            
-            
-            if (distance < 32) {
-                player.lives--;
-                enemies.splice(e, 1);
-                // console.log("lost a life bud")
-                // console.log(player.lives)
-                break;
-            }
-        }
-    }
-    
     let startbutton = document.querySelector("#startbutton")
     let modal = document.querySelector(".modal")
 
@@ -155,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
         createEnemyInterval = setInterval(createEnemy, 1000)
         gameLoopInterval = setInterval(gameLoop, 1000/75)
         updateEnemyInterval = setInterval(updateEnemy(a), 1000/75)
-        setInterval(collisionCheck, 1000/75);
-        setInterval(touchingEnemy, 1000/75);
+        setInterval(collisionCheck(a, enemies), 1000/75);
+        setInterval(touchingEnemy(a, enemies), 1000/75);
     })
 });

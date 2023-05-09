@@ -70,7 +70,6 @@ class Enemy {
 
 export const enemies = [];
 export const createEnemy = function () {
-    debugger
     let randWidth = Math.floor(Math.random() * 751);
     let randLength = Math.floor(Math.random() * 501);
     while (randWidth > 170 && randWidth < 580 || randLength > 115 && randLength < 385) {
