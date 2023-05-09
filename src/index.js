@@ -3,7 +3,7 @@ import * as dir from "./scripts/inputs";
 import Player from "./scripts/player";
 import Bullet from "./scripts/bullet";
 import Enemy from "./scripts/enemy";
-import { createEnemy, enemies } from "./scripts/enemy";
+import { createEnemy, enemies, updateEnemy } from "./scripts/enemy";
 import { heart } from "./scripts/lives";
 
 let gameLoopInterval;
@@ -20,19 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //options {name: "me", pos: [375, 250]} midpoint
     const a = new Player({name: "me", pos: [375, 250]})
     window.a = a;
-    // const enemies = [];
-    
-    // createEnemy(enemies);
-    // function createEnemy() {
-    //     let randWidth = Math.floor(Math.random() * 751);
-    //     let randLength = Math.floor(Math.random() * 501);
-    //     while (randWidth > 170 && randWidth < 580 || randLength > 115 && randLength < 385) {
-    //         randWidth = Math.floor(Math.random() * 751);
-    //         randLength = Math.floor(Math.random() * 501);
-    //     }
-    //     const enemy = new Enemy(randWidth, randLength);
-    //     enemies.push(enemy);
-    // }
+
     // debugger 61
     let timer = 10;
     function gameLoop() {
@@ -86,20 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </p>
         `
     }
-    
-    function updateEnemy() {
-        if (a.score >= 5) {
-            enemies.forEach((enemy) => {enemy.moveToPlayer(0.5)})
-        }
-        
-        if (a.score >= 15) {
-            enemies.forEach((enemy) => {enemy.moveToPlayer(0.75)})
-        }
-        
-        enemies.forEach((enemy) => {enemy.moveToPlayer()})
-    }
-    
-    
+
     function gameOver() {
         const modal = document.createElement("div");
         modal.id = "game-over-modal";
@@ -138,15 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 const dy = bullet.posy - enemy.posy - 24;
                 const distance = Math.sqrt((dx * dx) + (dy * dy));
                 
-                
                 //radius + half of enemy width  
                 if (distance < 7 + 15.375) {
-                    
-                    // console.log(`bulletx: ${[bullet.posx]}`);
-                    // console.log(`enemyx: ${[enemy.posx]}`);
-                    // console.log(`bullety: ${[bullet.posy]}`);
-                    // console.log(`enemyy: ${[enemy.posy]}`);
-                    
                     
                     a.bullets.splice(b, 1);
                     enemies.splice(e, 1);
@@ -181,12 +149,12 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let startbutton = document.querySelector("#startbutton")
     let modal = document.querySelector(".modal")
-    debugger
+
     startbutton.addEventListener("click", () => {
         modal.style.display = "none";
         createEnemyInterval = setInterval(createEnemy, 1000)
         gameLoopInterval = setInterval(gameLoop, 1000/75)
-        updateEnemyInterval = setInterval(updateEnemy, 1000/75)
+        updateEnemyInterval = setInterval(updateEnemy(a), 1000/75)
         setInterval(collisionCheck, 1000/75);
         setInterval(touchingEnemy, 1000/75);
     })
