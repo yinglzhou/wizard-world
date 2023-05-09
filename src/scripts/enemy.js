@@ -46,7 +46,7 @@ class Enemy {
         }
     }
 
-    moveToPlayer (speed) {
+    moveToPlayer(speed) {
         // debugger
         if (!speed) {speed = 1};
         const dx = this.player.posX - this.posx; //+16
@@ -69,10 +69,18 @@ class Enemy {
         this.posx += vx;
         this.posy += vy;
     }
-
-
-
 }
 
-
+export const enemies = [];
+export const createEnemy = function () {
+    debugger
+    let randWidth = Math.floor(Math.random() * 751);
+    let randLength = Math.floor(Math.random() * 501);
+    while (randWidth > 170 && randWidth < 580 || randLength > 115 && randLength < 385) {
+        randWidth = Math.floor(Math.random() * 751);
+        randLength = Math.floor(Math.random() * 501);
+    }
+    const enemy = new Enemy(randWidth, randLength);
+    enemies.push(enemy);
+}
 export default Enemy;

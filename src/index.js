@@ -3,6 +3,8 @@ import * as dir from "./scripts/inputs";
 import Player from "./scripts/player";
 import Bullet from "./scripts/bullet";
 import Enemy from "./scripts/enemy";
+import { createEnemy, enemies } from "./scripts/enemy";
+import { heart } from "./scripts/lives";
 
 let gameLoopInterval;
 let updateEnemyInterval;
@@ -12,66 +14,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("game-screen");
     const ctx = canvas.getContext("2d");
     window.ctx = ctx;
-
-
+    
     window.Player = Player;
-    // debugger
-
+    
     //options {name: "me", pos: [375, 250]} midpoint
     const a = new Player({name: "me", pos: [375, 250]})
     window.a = a;
-
-    const enemies = [];
-    window.enemies = enemies;
-
-    function createEnemy() {
-        let randWidth = Math.floor(Math.random() * 751);
-        let randLength = Math.floor(Math.random() * 501);
-        // debugger
-        while (randWidth > 170 && randWidth < 580 || randLength > 115 && randLength < 385) {
-            randWidth = Math.floor(Math.random() * 751);
-            randLength = Math.floor(Math.random() * 501);
-        }
-
-        // console.log(randWidth, randLength)
-        const enemy = new Enemy(randWidth, randLength);
-        enemies.push(enemy);
-        // console.log("enemy spawned")
-    }
+    // const enemies = [];
     
-    let redheart = new Image();
-    redheart.src = "./assets/1redheart.png"
-    
-    let emptyheart = new Image ();
-    emptyheart.src = "./assets/1emptyheart.png"
-    
-    function heart() {
-        if (a.lives === 3) {
-            ctx.drawImage(redheart, 0, 0, 32, 32, 620, 15, 32, 32)
-            ctx.drawImage(redheart, 0, 0, 32, 32, 585, 15, 32, 32)
-            ctx.drawImage(redheart, 0, 0, 32, 32, 550, 15, 32, 32)
-        }
-        if (a.lives === 2) {
-            ctx.drawImage(emptyheart, 0, 0, 32, 32, 620, 15, 32, 32)
-            ctx.drawImage(redheart, 0, 0, 32, 32, 585, 15, 32, 32)
-            ctx.drawImage(redheart, 0, 0, 32, 32, 550, 15, 32, 32)
-        }
-        if (a.lives === 1) {
-            ctx.drawImage(emptyheart, 0, 0, 32, 32, 620, 15, 32, 32)
-            ctx.drawImage(emptyheart, 0, 0, 32, 32, 585, 15, 32, 32)
-            ctx.drawImage(redheart, 0, 0, 32, 32, 550, 15, 32, 32)
-        }
-        if (a.lives === 0) {
-            ctx.drawImage(emptyheart, 0, 0, 32, 32, 620, 15, 32, 32)
-            ctx.drawImage(emptyheart, 0, 0, 32, 32, 585, 15, 32, 32)
-            ctx.drawImage(emptyheart, 0, 0, 32, 32, 550, 15, 32, 32)
-        }
-    }
+    // createEnemy(enemies);
+    // function createEnemy() {
+    //     let randWidth = Math.floor(Math.random() * 751);
+    //     let randLength = Math.floor(Math.random() * 501);
+    //     while (randWidth > 170 && randWidth < 580 || randLength > 115 && randLength < 385) {
+    //         randWidth = Math.floor(Math.random() * 751);
+    //         randLength = Math.floor(Math.random() * 501);
+    //     }
+    //     const enemy = new Enemy(randWidth, randLength);
+    //     enemies.push(enemy);
+    // }
     // debugger 61
-    let timer = 5;
+    let timer = 10;
     function gameLoop() {
         a.draw();
-        heart();
+        heart(a);
         enemies.forEach((enemy) => {enemy.draw(ctx)})
         a.move();
         a.update();
@@ -215,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let startbutton = document.querySelector("#startbutton")
     let modal = document.querySelector(".modal")
-    
+    debugger
     startbutton.addEventListener("click", () => {
         modal.style.display = "none";
         createEnemyInterval = setInterval(createEnemy, 1000)
