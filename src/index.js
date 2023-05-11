@@ -8,6 +8,8 @@ import { collisionCheck, touchingEnemy } from "./scripts/collision";
 import { heart } from "./scripts/lives";
 import { timer, timerPrint } from "./scripts/timer";
 import { gameOver, gameWin } from "./scripts/endgame";
+import { printScore } from "./scripts/score";
+import { backgroundMusic } from "./scripts/sound";
 
 let gameLoopInterval;
 let updateEnemyInterval;
@@ -33,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         a.update();
         timer -= 1/75;
         timerPrint(timer);
-        printScore();
+        printScore(a);
         if (a.lives <= 0) {
             clearInterval(gameLoopInterval);
             clearInterval(updateEnemyInterval);
@@ -48,24 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         
     }
-    
-    function printScore() {
-        const score = document.getElementById("scoreboard");
-        score.innerHTML = `
-        <p>
-        Score: <br>
-        <div>
-        ${a.score}
-        </div>
-        </p>
-        `
-    }
 
     let startbutton = document.querySelector("#startbutton")
     let modal = document.querySelector(".modal")
 
     startbutton.addEventListener("click", () => {
         modal.style.display = "none";
+        // backgroundMusic();
         createEnemyInterval = setInterval(createEnemy, 1000)
         gameLoopInterval = setInterval(gameLoop, 1000/75)
         updateEnemyInterval = setInterval(updateEnemy(a), 1000/75)
