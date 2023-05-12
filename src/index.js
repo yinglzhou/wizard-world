@@ -70,6 +70,5 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     let volume = document.getElementById('volume-control');
-    // debugger
     volume.addEventListener("click", toggleMusic(volume))
 });
