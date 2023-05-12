@@ -9,9 +9,22 @@ h1 {
 }
 
 #links {
+    position: fixed;
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    top: 0px;
+    right: 0px;
+    margin: 25px 25px;
+}
+#volume-control{
+    font-size: 30px;
+    position: fixed;
+    // top: 176px;
+    // left: 203px;
+    color: white;
+    top: 0px;
+    left: 0px;
+    margin: 25px 0px 0px 25px;
 }
 
 #about:hover{

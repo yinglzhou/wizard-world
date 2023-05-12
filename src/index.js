@@ -9,11 +9,14 @@ import { heart } from "./scripts/lives";
 import { timer, timerPrint } from "./scripts/timer";
 import { gameOver, gameWin } from "./scripts/endgame";
 import { printScore } from "./scripts/score";
-import { backgroundMusic } from "./scripts/sound";
+import { backgroundMusic, stopMusic, toggleMusic } from "./scripts/sound";
 
 let gameLoopInterval;
 let updateEnemyInterval;
 let createEnemyInterval;
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("game-screen");
@@ -40,12 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
             clearInterval(gameLoopInterval);
             clearInterval(updateEnemyInterval);
             clearInterval(createEnemyInterval);
+            stopMusic();
             gameOver();
         }
         if (timer <= 0) {
             clearInterval(gameLoopInterval);
             clearInterval(updateEnemyInterval);
             clearInterval(createEnemyInterval);
+            stopMusic();
             gameWin();
         }
         
@@ -56,11 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startbutton.addEventListener("click", () => {
         modal.style.display = "none";
-        // backgroundMusic();
+        backgroundMusic();
         createEnemyInterval = setInterval(createEnemy, 1000)
         gameLoopInterval = setInterval(gameLoop, 1000/75)
         updateEnemyInterval = setInterval(updateEnemy(a), 1000/75)
         setInterval(collisionCheck(a, enemies), 1000/75);
         setInterval(touchingEnemy(a, enemies), 1000/75);
     })
+
+    let volume = document.getElementById('volume-control');
+    // debugger
+    volume.addEventListener("click", toggleMusic(volume))
 });
