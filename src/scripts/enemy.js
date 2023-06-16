@@ -21,9 +21,6 @@ class Enemy {
     }
     
     draw(ctx) {
-        // ctx.fillRect(this.posx, this.posy, 32, 48)
-        // ctx.strokeStyle = "black";
-        // ctx.fillStyle = "red"
 
         ctx.drawImage(
             this.currentEnemy,

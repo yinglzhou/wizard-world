@@ -1,4 +1,3 @@
-
 class Bullet {
     //radius of bullet is 7
     constructor(posx, posy, dx, dy) {

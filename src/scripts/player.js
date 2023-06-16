@@ -74,7 +74,6 @@ class Player {
     }
 
     update () {
-        // debugger
         this.bullets.forEach((el) => {
             el.update(this.bullets)
         })
@@ -85,7 +84,6 @@ class Player {
     }
 
     printbullets () {
-        // debugger
 
         for (let i = 0; i < this.bullets.length; i++) {
             const bullet = this.bullets[i];
@@ -96,7 +94,6 @@ class Player {
 
     draw() {
         ctx.clearRect(0, 0, 750, 500);
-        // debugger
 
         ctx.drawImage(
             this.currentSprite,

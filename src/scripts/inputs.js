@@ -1,7 +1,6 @@
 // //all my event listeners for key presses (player movement)
 export const keyR = document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowRight") {
-        // debugger
         a.currentSprite = a.rightSprite;
         a.velX = 3;
         // this.currentSprite = this.rightSprite;
@@ -11,7 +10,6 @@ export const keyR = document.addEventListener("keydown", (e) => {
 
 export const keyL = document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") {
-        // debugger
         a.currentSprite = a.leftSprite;
         a.velX = -3;
         // console.log(e.key)
@@ -74,8 +72,7 @@ export const keyDU = document.addEventListener("keyup", (e) => {
 // e.code === "KeyD"
 export const rightShoot = document.addEventListener("keydown", (e) => {
     if (e.code === "KeyD") {
-        a.keyPressed = true;
-        // debugger 
+        a.keyPressed = true; 
         a.shoot(e.code);
         // a.printbullets();
         // console.log(a.keyPressed)
@@ -84,10 +81,8 @@ export const rightShoot = document.addEventListener("keydown", (e) => {
 })
 export const notRightShoot = document.addEventListener("keyup", (e) => {
     if (e.code === "KeyD") {
-        // debugger
 
         a.keyPressed = false;
-        // debugger
         // console.log(a.keyPressed)
         // console.log(e.key)
     }
@@ -95,8 +90,7 @@ export const notRightShoot = document.addEventListener("keyup", (e) => {
 
 export const leftShoot = document.addEventListener("keydown", (e) => {
     if (e.code === "KeyA") {
-        a.keyPressed = true;
-        // debugger 
+        a.keyPressed = true; 
         a.shoot(e.code);
         // a.printbullets();
         // console.log(a.keyPressed)
@@ -105,7 +99,6 @@ export const leftShoot = document.addEventListener("keydown", (e) => {
 })
 export const notLeftShoot = document.addEventListener("keyup", (e) => {
     if (e.code === "KeyA") {
-        // debugger
 
         a.keyPressed = false;
         // console.log(a.keyPressed)
@@ -115,8 +108,7 @@ export const notLeftShoot = document.addEventListener("keyup", (e) => {
 
 export const upShoot = document.addEventListener("keydown", (e) => {
     if (e.code === "KeyW") {
-        a.keyPressed = true;
-        // debugger 
+        a.keyPressed = true; 
         a.shoot(e.code);
         // a.printbullets();
         // console.log(a.keyPressed)
@@ -125,7 +117,6 @@ export const upShoot = document.addEventListener("keydown", (e) => {
 })
 export const notUpShoot = document.addEventListener("keyup", (e) => {
     if (e.code === "KeyW") {
-        // debugger
 
         a.keyPressed = false;
         // console.log(a.keyPressed)
@@ -135,8 +126,7 @@ export const notUpShoot = document.addEventListener("keyup", (e) => {
 
 export const downShoot = document.addEventListener("keydown", (e) => {
     if (e.code === "KeyS") {
-        a.keyPressed = true;
-        // debugger 
+        a.keyPressed = true; 
         a.shoot(e.code);
         // a.printbullets();
         // console.log(a.keyPressed)
@@ -145,7 +135,6 @@ export const downShoot = document.addEventListener("keydown", (e) => {
 })
 export const notDownShoot = document.addEventListener("keyup", (e) => {
     if (e.code === "KeyS") {
-        // debugger
 
         a.keyPressed = false;
         // console.log(a.keyPressed)

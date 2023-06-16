@@ -4,7 +4,7 @@ export const heart = function(player) {
     
     let emptyheart = new Image ();
     emptyheart.src = "./assets/1emptyheart.png"
-    // debugger
+    
     if (!player) {return}
     if (player.lives === 3) {
         ctx.drawImage(redheart, 0, 0, 32, 32, 620, 15, 32, 32)
